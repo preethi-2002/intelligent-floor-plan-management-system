@@ -1,0 +1,66 @@
+// FloorPlanManagement.js
+
+import React, { useState } from 'react';
+
+const FloorPlanManagement = () => {
+  const [floorPlan, setFloorPlan] = useState('');
+  const [offlineChanges, setOfflineChanges] = useState('');
+  const [meetingRoomSuggestions, setMeetingRoomSuggestions] = useState('');
+
+  const handleUploadFloorPlan = () => {
+    // Implement logic to upload floor plan
+    // You may use APIs to interact with the backend
+    // ...
+
+    // Example: Display a success message
+    alert('Floor plan uploaded successfully');
+  };
+
+  const handleUpdateOfflineChanges = () => {
+    // Implement logic for updating floor plan offline
+    // ...
+
+    // Example: Display a success message
+    alert('Floor plan updated offline and synchronized');
+  };
+
+  const handleGetMeetingRoomSuggestions = () => {
+    // Implement logic to get meeting room suggestions
+    // ...
+
+    // Example: Display the suggested meeting rooms
+    alert(`Suggested meeting rooms: ${meetingRoomSuggestions}`);
+  };
+
+  return (
+    <div>
+      <h2>Floor Plan Management</h2>
+      
+      <div>
+        <h3>Upload Floor Plan</h3>
+        <input
+          type="file"
+          onChange={(e) => setFloorPlan(e.target.value)}
+        />
+        <button onClick={handleUploadFloorPlan}>Upload</button>
+      </div>
+
+      <div>
+        <h3>Update Offline Changes</h3>
+        <input
+          type="text"
+          value={offlineChanges}
+          onChange={(e) => setOfflineChanges(e.target.value)}
+        />
+        <button onClick={handleUpdateOfflineChanges}>Update Offline</button>
+      </div>
+
+      <div>
+        <h3>Get Meeting Room Suggestions</h3>
+        <button onClick={handleGetMeetingRoomSuggestions}>Get Suggestions</button>
+      </div>
+    </div>
+  );
+};
+
+export default FloorPlanManagement;
