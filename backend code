@@ -1,0 +1,39 @@
+// server.js
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const PORT = 3001;
+
+app.use(bodyParser.json());
+
+// Sample endpoint for floor plan management
+app.post('/api/uploadFloorPlan', (req, res) => {
+  // Handle conflict resolution and version control
+  // ...
+
+  // Respond with success or error
+  res.json({ message: 'Floor plan uploaded successfully' });
+});
+
+// Sample endpoint for offline mechanism
+app.post('/api/updateFloorPlanOffline', (req, res) => {
+  // Handle local storage and synchronization
+  // ...
+
+  // Respond with success or error
+  res.json({ message: 'Floor plan updated offline and synchronized' });
+});
+
+// Sample endpoint for meeting room optimization
+app.get('/api/getMeetingRoomSuggestions', (req, res) => {
+  // Implement logic for meeting room suggestions
+  // ...
+
+  // Respond with suggested meeting rooms
+  res.json({ meetingRooms: suggestedRooms });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
